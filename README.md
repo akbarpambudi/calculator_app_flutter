@@ -1,6 +1,6 @@
 # calculator_app
 
-A new Flutter project.
+Proyek kalulator sederhana, untuk mengenal dasar-dasar flutter.
 
 ## Getting Started
 
