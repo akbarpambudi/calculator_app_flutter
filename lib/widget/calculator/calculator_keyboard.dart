@@ -4,8 +4,12 @@ import 'calculator_key.dart';
 
 class CalculatorKeyboard extends StatelessWidget {
   final Function onKeyPressed;
-
-  CalculatorKeyboard({@required this.onKeyPressed});
+  final Function onExecutePressed;
+  final Function onResetPressed;
+  CalculatorKeyboard(
+      {@required this.onKeyPressed,
+      @required this.onExecutePressed,
+      @required this.onResetPressed});
 
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +26,9 @@ class CalculatorKeyboard extends StatelessWidget {
                     color: Theme.of(context).primaryColor,
                     symbol: "C",
                     textColor: Colors.white,
-                    onPress: onKeyPressed),
+                    onPress: (key) {
+                      onResetPressed();
+                    }),
                 CalculatorKey(
                   color: Theme.of(context).primaryColor,
                   symbol: "+/-",
@@ -62,7 +68,7 @@ class CalculatorKeyboard extends StatelessWidget {
                 ),
                 CalculatorKey(
                     color: Theme.of(context).primaryColor,
-                    symbol: "/",
+                    symbol: "x",
                     onPress: onKeyPressed,
                     textColor: Colors.white)
               ],
@@ -87,7 +93,7 @@ class CalculatorKeyboard extends StatelessWidget {
                 ),
                 CalculatorKey(
                     color: Theme.of(context).primaryColor,
-                    symbol: "+",
+                    symbol: "-",
                     onPress: onKeyPressed,
                     textColor: Colors.white)
               ],
@@ -135,7 +141,9 @@ class CalculatorKeyboard extends StatelessWidget {
                 CalculatorKey(
                     color: Theme.of(context).primaryColor,
                     symbol: "=",
-                    onPress: onKeyPressed,
+                    onPress: (symbol) {
+                      onExecutePressed();
+                    },
                     textColor: Colors.white)
               ],
             ),

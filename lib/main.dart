@@ -1,3 +1,4 @@
+import 'package:calculator_app/services/calculator_service.dart';
 import 'package:calculator_app/widget/calculator/calculator_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.orange,
       ),
-      home: CalculatorScreen(),
+      home: CalculatorScreen(CalculatorService()),
     );
   }
 }

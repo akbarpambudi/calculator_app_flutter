@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CalculationPreviewer extends StatelessWidget {
-  const CalculationPreviewer({
-    Key key,
-  }) : super(key: key);
+  final String content;
+  const CalculationPreviewer({Key key, this.content}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class CalculationPreviewer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: <Widget>[
           Text(
-            "10",
+            content,
             style: TextStyle(color: Colors.white, fontSize: 50),
           ),
         ],
