@@ -68,7 +68,7 @@ class CalculatorKeyboard extends StatelessWidget {
                 ),
                 CalculatorKey(
                     color: Theme.of(context).primaryColor,
-                    symbol: "x",
+                    symbol: "*",
                     onPress: onKeyPressed,
                     textColor: Colors.white)
               ],
